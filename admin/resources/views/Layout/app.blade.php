@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="{{asset('css/datatables-select.min.css')}}">
 </head>
 
-<body>
+<body class="fix-header fix-sidebar">
+@include('Layout.menu')  
 
  @yield('content') 
  
@@ -23,12 +24,14 @@
 
 
 
+</div>
+</div>
 
 
-<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-<script type="{{asset('text/javascript')}}" src="js/popper.min.js"></script>
-<script type="{{asset('text/javascript')}}" src="js/bootstrap.js"></script>
-<script type="{{asset('text/javascript')}}" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
 <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('js/sidebarmenu.js')}}"></script>
 <script src="{{asset('js/sticky-kit.min.js')}}"></script>
@@ -40,4 +43,4 @@
 </body>
 </html>
 
-{{asset('')}}
+
