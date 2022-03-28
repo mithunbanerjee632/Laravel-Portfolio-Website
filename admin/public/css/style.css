@@ -11,6 +11,12 @@
 .wrapper-padding{
 padding: 1% 1% 1% 1% ;
 }
+.loading-icon{
+	width: 100px;
+	height: auto;
+	margin-top: 40px;
+}
+
 .form-control:focus {
 	border-color: black;
 	box-shadow: none;
