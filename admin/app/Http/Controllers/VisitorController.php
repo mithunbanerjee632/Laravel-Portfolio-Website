@@ -9,7 +9,7 @@ class VisitorController extends Controller
 {
     public function VisitorIndex()
     {
-       $VisitorData = json_decode(VisitorModel::orderBy('id','desc')->take(500)->all());
+       $VisitorData = json_decode(VisitorModel::orderBy('id','desc')->take(500)->get());
 
        return view('Visitor',['VisitorData'=>$VisitorData]);
     }
