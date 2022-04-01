@@ -6,6 +6,9 @@
 <div id="mainDiv" class="container d-none">
 <div class="row">
 <div class="col-md-12 p-5">
+
+  <button class="btn btn-sm btn-danger my-3">Add New Service</button>
+
 <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr>
@@ -46,7 +49,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Delte Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -62,6 +65,66 @@
     </div>
   </div>
 </div>
+
+<!-- Edit and Update Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body text-center p-5">
+       <div class="form-outline mb-4"> 
+        
+      	<h6 id="serviceEditId" class="mt-4"> </h6>
+
+          <div id="serviceUpdateForm" class="d-none w-100">  
+		      	<input type="text" id="serviceNameId" class="form-control mb-4" placeholder="Service Name" />
+		      	<input type="text" id="serviceDesId" class="form-control mb-4" placeholder="Service Description"/>
+		      	<input type="text" id="serviceImgId" class="form-control mb-4" placeholder="Service Image Link"/>
+        </div>
+
+      	<img id="serviceEditLoader" class="loading-icon " src="{{asset('images/loader.svg')}}">
+      	<h3 id="serviceEditWrong" class="d-none">Something Went Wrong!</h3>
+      </div>
+    
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button  id="serviceEditConfirmBtn" type="button" class="btn btn-danger">Save</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add new  Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body text-center p-5">
+       <div class="form-outline mb-4"> 
+        
+        <h6 id="serviceEditId" class="mt-4"> </h6>
+
+          <div id="serviceUpdateForm" class="d-none w-100">  
+            <input type="text" id="serviceNameId" class="form-control mb-4" placeholder="Service Name" />
+            <input type="text" id="serviceDesId" class="form-control mb-4" placeholder="Service Description"/>
+            <input type="text" id="serviceImgId" class="form-control mb-4" placeholder="Service Image Link"/>
+        </div>
+
+        <img id="serviceEditLoader" class="loading-icon " src="{{asset('images/loader.svg')}}">
+        <h3 id="serviceEditWrong" class="d-none">Something Went Wrong!</h3>
+      </div>
+    
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button  id="serviceEditConfirmBtn" type="button" class="btn btn-danger">Save</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
 
 @endsection
 
