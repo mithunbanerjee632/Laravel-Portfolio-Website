@@ -209,5 +209,71 @@ function ServiceUpdate(serviceID,serviceName,serviceDes,serviceImg){
    
 }
 
+
+//Add New Service Button click
+
+$('#addNewBtnId').click(function(){
+    $('#addModal').modal('show');
+});
+
+
+//Service table Add Service Modal Add  Button Click
+
+$('#serviceAddConfirmBtn').click(function() {
+
+    var name = $('#serviceNameAddId').val();
+    var des  = $('#serviceDesAddId').val();
+    var img  = $('#serviceImgAddId').val();
+
+    serviceAdd(name,des,img);
+
+})
+
+
+
+//service add method
+
+function serviceAdd(serviceName,serviceDes,serviceImg){
+    if(serviceName.length == 0){
+        toastr.error('Service Name is Empty !');
+    }else if(serviceDes.length == 0){
+        toastr.error('Service Description is Empty !');
+    }else if(serviceImg.length == 0){
+        toastr.error('Service Image is Empty !');
+    }else{
+        $('#serviceAddConfirmBtn').html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'></span></div>"); //spinner animation(response pawar aage)
+
+        axios.post('/ServiceAdd',{
+            name:serviceName,
+            des:serviceDes,
+            img:serviceImg
+        })
+        .then(function(response){
+            if(response.status == 200){
+                $('#serviceAddConfirmBtn').html("Add");
+
+                if(response.data == 1){
+                    $('#addModal').modal('hide');
+                    toastr.success('Data Inserted Successfully !');
+                    getServiceData();
+
+                }else{
+                    $('#addModal').modal('hide');
+                    toastr.error('Data Inserted Failed !'); 
+                    getServiceData();
+                }
+            }else{
+                $('#addModal').modal('hide');
+                toastr.error('Something Went Wrong !'); 
+            }
+
+        }).catch(function(error){
+            $('#addModal').modal('hide');
+            toastr.error('Something Went Wrong !'); 
+        });
+
+    }
+}
+
     
 

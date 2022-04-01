@@ -14,7 +14,8 @@ use App\Http\Controllers\ServiceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+//error log
+//Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 Route::get('/',[HomeController::class,'HomeIndex']);
 Route::get('/visitor',[VisitorController::class,'VisitorIndex']);
@@ -25,3 +26,4 @@ Route::get('/servicesData',[ServiceController::class,'ServiceData']);
 Route::post('/servicesDelete',[ServiceController::class,'ServiceDelete']);
 Route::post('/servicesDetails',[ServiceController::class,'getServicesDetails']);
 Route::post('/ServiceUpdate',[ServiceController::class,'ServiceUpdate']);
+Route::post('/ServiceAdd',[ServiceController::class,'serviceAdd']);
