@@ -9,7 +9,7 @@
 
   <button id="addNewBtnId" class="btn btn-sm btn-danger my-3">Add New Service</button>
 
-<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<table id="ServiceDataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th class="th-sm">Image</th>
@@ -55,7 +55,7 @@
     <div class="modal-content">
       <div class="modal-body text-center p-3">
       	<h5 class="mt-4">Are you sure to Delete</h5>
-      	<h6 id="serviceDeleteId" class="mt-4"> </h6>	
+      	<h6 id="serviceDeleteId d-none" class="mt-2"> </h6>	
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
@@ -70,10 +70,18 @@
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+
+     <div class="modal-header">
+        <h5 class="modal-title">Update Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
       <div class="modal-body text-center p-5">
        <div class="form-outline mb-4"> 
         
-      	<h6 id="serviceEditId" class="mt-4"> </h6>
+      	<h6 id="serviceEditId d-none" class="mt-4"> </h6>
 
           <div id="serviceUpdateForm" class="d-none w-100">  
 		      	<input type="text" id="serviceNameId" class="form-control mb-4" placeholder="Service Name" />
@@ -152,6 +160,7 @@ function getServiceData() {
                 $('#mainDiv').removeClass('d-none');
                 $('#loaderDiv').addClass('d-none');
 
+                $('#ServiceDataTable').DataTable().destroy();
                 $('#service_table').empty();
 
                 var jsonData = response.data;
@@ -186,6 +195,12 @@ function getServiceData() {
                      ServiceUpdateDetails(id);
                     $('#editModal').modal('show');
                 })
+                
+
+                //Data table
+
+                $('#ServiceDataTable').DataTable({"order":false});
+                $('.dataTables_length').addClass('bs-select');
 
               
 
