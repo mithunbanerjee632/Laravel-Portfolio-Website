@@ -54,7 +54,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body text-center p-3">
-      	<h5 class="mt-4">Are you sure to Delete</h5>
+      	<h5 class="mt-4">Are you sure to Delete?</h5>
       	<h6 id="serviceDeleteId d-none" class="mt-2"> </h6>	
       </div>
       <div class="modal-footer">
@@ -170,8 +170,8 @@ function getServiceData() {
                         "<td><img class='table-img' src=" + jsonData[i].service_img + "></td>" +
                         "<td>" + jsonData[i].service_name + "</td>" +
                         "<td>" + jsonData[i].service_des + "</td>" +
-                        "<td><a class='serviceEditBtn' data-id =" + jsonData[i].id + "  ><i class='fas fa-edit'></i></a></td>" +
-                        "<td><a class='serviceDeleteBtn' data-id =" + jsonData[i].id + " ><i class='fas fa-trash-alt'></i></a></td>"
+                        "<td><a class='serviceEditBtn' data-id =" + jsonData[i].id + "><i class='fas fa-edit'></i></a></td>" +
+                        "<td><a class='serviceDeleteBtn' data-id =" + jsonData[i].id + "><i class='fas fa-trash-alt'></i></a></td>"
 
                     ).appendTo('#service_table');
                 });

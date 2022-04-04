@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,7 @@ use App\Http\Controllers\CoursesController;
 |
 */
 //error log
-//Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 Route::get('/',[HomeController::class,'HomeIndex']);
 Route::get('/visitor',[VisitorController::class,'VisitorIndex']);
@@ -38,4 +40,14 @@ Route::post('/coursesDelete',[CoursesController::class,'CoursesDelete']);
 Route::post('/coursesDetails',[CoursesController::class,'getCoursesDetails']);
 Route::post('/coursesUpdate',[CoursesController::class,'CoursesUpdate']);
 Route::post('/coursesAdd',[CoursesController::class,'CoursesAdd']);
+
+
+//Admin Project Management
+
+Route::get('/projects',[ProjectController::class,'ProjectsIndex']);
+Route::get('/getprojectsData',[ProjectController::class,'ProjectsData']);
+Route::post('/projectsDelete',[ProjectController::class,'ProjectsDelete']);
+Route::post('/projectsDetails',[ProjectController::class,'getProjectsDetails']);
+Route::post('/projectsUpdate',[ProjectController::class,'ProjectsUpdate']);
+Route::post('/projectsAdd',[ProjectController::class,'ProjectAdd']);
 

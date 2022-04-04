@@ -142,7 +142,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body text-center p-3">
-      	<h5 class="mt-4">Are you sure to Delete</h5>
+      	<h5 class="mt-4">Are you sure to Delete?</h5>
       	<h6 id="CourseDeleteId d-none" class="mt-4"> </h6>	
       </div>
       <div class="modal-footer">
