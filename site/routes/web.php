@@ -15,4 +15,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class,'HomeIndex']);
-Route::get('/contactsend', [HomeController::class,'ContactSend']);
+Route::post('/contactsend', [HomeController::class,'ContactSend']);
