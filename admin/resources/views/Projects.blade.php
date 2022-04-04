@@ -207,10 +207,14 @@ function getProjectData(){
 
 
 
+       }else{
+        $('#wrongDivProject').removeClass('d-none');
+        $('#loaderDivProject').addClass('d-none');
        }
     })
     .catch(function(error){
-
+       $('#wrongDivProject').removeClass('d-none');
+        $('#loaderDivProject').addClass('d-none');
     });
 }
 

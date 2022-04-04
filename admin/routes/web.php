@@ -7,6 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,12 @@ Route::post('/projectsAdd',[ProjectController::class,'ProjectAdd']);
 Route::get('/contacts',[ContactController::class,'ContactIndex']);
 Route::get('/getcontactsData',[ContactController::class,'ContactsData']);
 Route::post('/contactsDelete',[ContactController::class,'ContactDelete']);
+
+//Admin Review Management
+
+Route::get('/reviews',[ReviewController::class,'ReviewIndex']);
+Route::get('/getreviewsdata',[ReviewController::class,'ReviewsData']);
+Route::post('/addreviewsdata',[ReviewController::class,'ReviewAdd']);
+Route::post('/getreviewsdetails',[ReviewController::class,'ReviewDetails']);
+Route::post('/reviewsupdate',[ReviewController::class,'ReviewUpdate']);
+Route::post('/reviewsdelete',[ReviewController::class,'ReviewDelete']);
