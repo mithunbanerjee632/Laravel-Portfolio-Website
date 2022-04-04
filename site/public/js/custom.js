@@ -54,11 +54,26 @@ $(document).ready(function() {
 
 });
 
-
-
-
-
-
-
-
 // Owl Carousel End..................
+
+//Contact Send
+
+function  SendContact(ContactName,ContactMobile,ContactEmail,ContactMsg){
+    if(ContactName.length == 0){
+        toastr.error('Name is Empty !');
+    }else if(ContactMobile.length == 0){
+        toastr.error('Mobile Number is Empty !');
+    }else if(ContactEmail.length == 0){
+        toastr.error('Email  is Empty !');
+    }else if(ContactMsg.length == 0){
+        toastr.error('Message  is Empty !');
+    }else{
+        axios.post('/contactsend',{
+            contact_name:
+            contact_mobile:
+            contact_email:
+            contact_msg:
+        })
+            .then(function(response){}).catch(function(error){});
+    }
+}
