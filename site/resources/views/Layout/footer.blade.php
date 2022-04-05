@@ -17,15 +17,15 @@
             <div class="col-md-3 col-lg-3 col-sm-6">
                 <h3 class="service-card-title">তথ্য </h3>
                 <hr>
-                <a class="footer-link" target="_blank"  href="http://rabbil.com/">যোগাযোগ</a><br>
-                <a class="footer-link" target="_blank"  href="http://rabbil.com/">প্রজেক্ট সমূহ</a><br>
-                <a class="footer-link" target="_blank"  href="http://rabbil.com/">কোর্স সমূহ </a><br>
+                <a class="footer-link"   href="#contact">যোগাযোগ</a><br>
+                <a class="footer-link"   href="{{url('/projects')}}">প্রজেক্ট সমূহ</a><br>
+                <a class="footer-link"   href="{{url('/course')}}">কোর্স সমূহ </a><br>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-6">
                 <h3 class="service-card-title">আইনি</h3>
                 <hr>
-                <a class="footer-link" target="_blank" href="">ফেরত নীতি</a><br>
-                <a class="footer-link" target="_blank" href="">শর্ত সমূহ </a><br>
+                <a class="footer-link"  href="{{url('/privacy')}}">প্রাইভেসি পলিসি</a><br>
+                <a class="footer-link"  href="{{url('/terms')}}">শর্ত সমূহ </a><br>
             </div>
         </div>
     </div>
