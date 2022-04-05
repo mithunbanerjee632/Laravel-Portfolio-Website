@@ -6,6 +6,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TermsController;
 use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('/course', [CourseController::class,'CoursePage']);
 Route::get('/projects', [ProjectsController::class,'ProjectsPage']);
 Route::get('/privacy', [PrivacyController::class,'PrivacyPage']);
 Route::get('/terms', [TermsController::class,'TermsPage']);
+Route::get('/contact', [ContactController::class,'ContactPage']);

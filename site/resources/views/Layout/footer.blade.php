@@ -10,14 +10,14 @@
             <div class="col-md-3 col-lg-3 col-sm-6">
                 <h3 class="service-card-title">ঠিকানা</h3>
                 <hr>
-                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> শেখেরটেক ৮ মোহাম্মদপুর, ঢাকা </p>
-                <p class="footer-text"><i class="fas fa-phone"></i> ০১৭৮৫৩৮৮৯১৯ </p>
-                <p class="footer-text"><i class="fas fa-envelope"></i> Rabbil@Yahoo.com</p>
+                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> কাদেরাবাদ হাউজিং, মোহাম্মদপুর, ঢাকা </p>
+                <p class="footer-text"><i class="fas fa-phone"></i> ০১৭১৩৫৭৪৮৬৯ </p>
+                <p class="footer-text"><i class="fas fa-envelope"></i> mithunbanerjee632@gmail.com</p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-6">
                 <h3 class="service-card-title">তথ্য </h3>
                 <hr>
-                <a class="footer-link"   href="#contact">যোগাযোগ</a><br>
+                <a class="footer-link"   href="{{url('/contact')}}">যোগাযোগ</a><br>
                 <a class="footer-link"   href="{{url('/projects')}}">প্রজেক্ট সমূহ</a><br>
                 <a class="footer-link"   href="{{url('/course')}}">কোর্স সমূহ </a><br>
             </div>
