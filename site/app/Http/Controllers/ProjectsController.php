@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProjectModel;
 
 class ProjectsController extends Controller
 {
     function ProjectsPage(){
-        return view('Projects');
+        $ProjectData=json_decode(ProjectModel::orderBy('id','desc')->get());
+        return view('Projects',['ProjectData'=>$ProjectData]);
     }
 }

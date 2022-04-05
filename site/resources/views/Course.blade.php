@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <h1>Course Page</h1>>
+   @include('Component.CoureseTopBanner')
+
+   @include('Component.AllCourse')
 
 
 @endsection

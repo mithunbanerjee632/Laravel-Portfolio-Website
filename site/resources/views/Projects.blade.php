@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <h1>Projects page</h1>>
+    @include('Component.ProjectTopBanner')
+
+    @include('Component.AllProject')
 
 
 @endsection
