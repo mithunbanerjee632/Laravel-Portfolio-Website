@@ -1,6 +1,6 @@
 @extends('Layout.app')
 
-
+@section('title','Reviews')
 @section('content')
 
 <div id="mainDivRivew" class="container d-none">

@@ -1,4 +1,5 @@
 @extends('Layout.app')
+@section('title','Visitor')
 
 @section('content')
 

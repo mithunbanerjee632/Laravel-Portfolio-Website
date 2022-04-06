@@ -8,6 +8,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,49 +23,56 @@ use App\Http\Controllers\ReviewController;
 //error log
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
-Route::get('/',[HomeController::class,'HomeIndex']);
-Route::get('/visitor',[VisitorController::class,'VisitorIndex']);
+Route::get('/',[HomeController::class,'HomeIndex'])->middleware('loginCheck');
+Route::get('/visitor',[VisitorController::class,'VisitorIndex'])->middleware('loginCheck');
 
 //Admin Service Management
 
-Route::get('/services',[ServiceController::class,'ServiceIndex']);
-Route::get('/servicesData',[ServiceController::class,'ServiceData']);
-Route::post('/servicesDelete',[ServiceController::class,'ServiceDelete']);
-Route::post('/servicesDetails',[ServiceController::class,'getServicesDetails']);
-Route::post('/ServiceUpdate',[ServiceController::class,'ServiceUpdate']);
-Route::post('/ServiceAdd',[ServiceController::class,'serviceAdd']);
+Route::get('/services',[ServiceController::class,'ServiceIndex'])->middleware('loginCheck');
+Route::get('/servicesData',[ServiceController::class,'ServiceData'])->middleware('loginCheck');
+Route::post('/servicesDelete',[ServiceController::class,'ServiceDelete'])->middleware('loginCheck');
+Route::post('/servicesDetails',[ServiceController::class,'getServicesDetails'])->middleware('loginCheck');
+Route::post('/ServiceUpdate',[ServiceController::class,'ServiceUpdate'])->middleware('loginCheck');
+Route::post('/ServiceAdd',[ServiceController::class,'serviceAdd'])->middleware('loginCheck');
 
 //Admin Course Management
 
-Route::get('/courses',[CoursesController::class,'CoursesIndex']);
-Route::get('/getcoursesData',[CoursesController::class,'CoursesData']);
-Route::post('/coursesDelete',[CoursesController::class,'CoursesDelete']);
-Route::post('/coursesDetails',[CoursesController::class,'getCoursesDetails']);
-Route::post('/coursesUpdate',[CoursesController::class,'CoursesUpdate']);
-Route::post('/coursesAdd',[CoursesController::class,'CoursesAdd']);
+Route::get('/courses',[CoursesController::class,'CoursesIndex'])->middleware('loginCheck');
+Route::get('/getcoursesData',[CoursesController::class,'CoursesData'])->middleware('loginCheck');
+Route::post('/coursesDelete',[CoursesController::class,'CoursesDelete'])->middleware('loginCheck');
+Route::post('/coursesDetails',[CoursesController::class,'getCoursesDetails'])->middleware('loginCheck');
+Route::post('/coursesUpdate',[CoursesController::class,'CoursesUpdate'])->middleware('loginCheck');
+Route::post('/coursesAdd',[CoursesController::class,'CoursesAdd'])->middleware('loginCheck');
 
 
 //Admin Project Management
 
-Route::get('/projects',[ProjectController::class,'ProjectsIndex']);
-Route::get('/getprojectsData',[ProjectController::class,'ProjectsData']);
-Route::post('/projectsDelete',[ProjectController::class,'ProjectsDelete']);
-Route::post('/projectsDetails',[ProjectController::class,'getProjectsDetails']);
-Route::post('/projectsUpdate',[ProjectController::class,'ProjectsUpdate']);
-Route::post('/projectsAdd',[ProjectController::class,'ProjectAdd']);
+Route::get('/projects',[ProjectController::class,'ProjectsIndex'])->middleware('loginCheck');
+Route::get('/getprojectsData',[ProjectController::class,'ProjectsData'])->middleware('loginCheck');
+Route::post('/projectsDelete',[ProjectController::class,'ProjectsDelete'])->middleware('loginCheck');
+Route::post('/projectsDetails',[ProjectController::class,'getProjectsDetails'])->middleware('loginCheck');
+Route::post('/projectsUpdate',[ProjectController::class,'ProjectsUpdate'])->middleware('loginCheck');
+Route::post('/projectsAdd',[ProjectController::class,'ProjectAdd'])->middleware('loginCheck');
 
 
 //Admin Contact Management
 
-Route::get('/contacts',[ContactController::class,'ContactIndex']);
-Route::get('/getcontactsData',[ContactController::class,'ContactsData']);
-Route::post('/contactsDelete',[ContactController::class,'ContactDelete']);
+Route::get('/contacts',[ContactController::class,'ContactIndex'])->middleware('loginCheck');
+Route::get('/getcontactsData',[ContactController::class,'ContactsData'])->middleware('loginCheck');
+Route::post('/contactsDelete',[ContactController::class,'ContactDelete'])->middleware('loginCheck');
 
 //Admin Review Management
 
-Route::get('/reviews',[ReviewController::class,'ReviewIndex']);
-Route::get('/getreviewsdata',[ReviewController::class,'ReviewsData']);
-Route::post('/addreviewsdata',[ReviewController::class,'ReviewAdd']);
-Route::post('/getreviewsdetails',[ReviewController::class,'ReviewDetails']);
-Route::post('/reviewsupdate',[ReviewController::class,'ReviewUpdate']);
-Route::post('/reviewsdelete',[ReviewController::class,'ReviewDelete']);
+Route::get('/reviews',[ReviewController::class,'ReviewIndex'])->middleware('loginCheck');
+Route::get('/getreviewsdata',[ReviewController::class,'ReviewsData'])->middleware('loginCheck');
+Route::post('/addreviewsdata',[ReviewController::class,'ReviewAdd'])->middleware('loginCheck');
+Route::post('/getreviewsdetails',[ReviewController::class,'ReviewDetails'])->middleware('loginCheck');
+Route::post('/reviewsupdate',[ReviewController::class,'ReviewUpdate'])->middleware('loginCheck');
+Route::post('/reviewsdelete',[ReviewController::class,'ReviewDelete'])->middleware('loginCheck');
+
+
+//Admin login
+Route::get('/login',[LoginController::class,'LoginIndex']);
+Route::post('/onlogin',[LoginController::class,'onLogin']);
+Route::get('/onlogout',[LoginController::class,'onLogout']);
+
