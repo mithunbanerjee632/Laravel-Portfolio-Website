@@ -21,8 +21,8 @@
     </tr>
   </thead>
   <tbody id="course_table">
-  
-	
+
+
   </tbody>
 </table>
 
@@ -37,7 +37,7 @@
 <div class="row">
 <div class="col-md-12 p-5 text-center">
   <img class="loading-icon " src="{{asset('images/loader.svg')}}">
- 
+
 </div>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="row">
 <div class="col-md-12 p-5 text-center">
   <h3>Something Went Wrong!</h3>
- 
+
 </div>
 </div>
 </div>
@@ -68,15 +68,15 @@
        <div class="container">
        	<div class="row">
        		<div class="col-md-6">
-             	<input id="CourseNameId" type="text" id="" class="form-control mb-3" placeholder="Course Name">
-          	 	<input id="CourseDesId" type="text" id="" class="form-control mb-3" placeholder="Course Description">
-    		 	   <input id="CourseFeeId" type="text" id="" class="form-control mb-3" placeholder="Course Fee">
-     			   <input id="CourseEnrollId" type="text" id="" class="form-control mb-3" placeholder="Total Enroll">
+             	<input id="CourseNameId" type="text"  class="form-control mb-3" placeholder="Course Name">
+          	 	<input id="CourseDesId" type="text"  class="form-control mb-3" placeholder="Course Description">
+    		 	   <input id="CourseFeeId" type="text" class="form-control mb-3" placeholder="Course Fee">
+     			   <input id="CourseEnrollId" type="text"  class="form-control mb-3" placeholder="Total Enroll">
        		</div>
        		<div class="col-md-6">
-     			<input id="CourseClassId" type="text" id="" class="form-control mb-3" placeholder="Total Class">      
-     			<input id="CourseLinkId" type="text" id="" class="form-control mb-3" placeholder="Course Link">
-     			<input id="CourseImgId" type="text" id="" class="form-control mb-3" placeholder="Course Image">
+     			<input id="CourseClassId" type="text"  class="form-control mb-3" placeholder="Total Class">
+     			<input id="CourseLinkId" type="text"  class="form-control mb-3" placeholder="Course Link">
+     			<input id="CourseImgId" type="text"  class="form-control mb-3" placeholder="Course Image">
        		</div>
        	</div>
        </div>
@@ -115,7 +115,7 @@
      			   <input id="CourseEnrollUpdateId" type="text" id="" class="form-control mb-3" placeholder="Total Enroll">
        		</div>
        		<div class="col-md-6">
-     			<input id="CourseClassUpdateId" type="text" id="" class="form-control mb-3" placeholder="Total Class">      
+     			<input id="CourseClassUpdateId" type="text" id="" class="form-control mb-3" placeholder="Total Class">
      			<input id="CourseLinkUpdateId" type="text" id="" class="form-control mb-3" placeholder="Course Link">
      			<input id="CourseImgUpdateId" type="text" id="" class="form-control mb-3" placeholder="Course Image">
        		</div>
@@ -143,12 +143,12 @@
     <div class="modal-content">
       <div class="modal-body text-center p-3">
       	<h5 class="mt-4">Are you sure to Delete?</h5>
-      	<h6 id="CourseDeleteId d-none" class="mt-4"> </h6>	
+      	<h6 id="CourseDeleteId d-none" class="mt-4"> </h6>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
         <button  id="CourseDeleteConfirmBtn" type="button" class="btn btn-danger">Yes</button>
-   
+
       </div>
     </div>
   </div>
@@ -177,8 +177,8 @@ function getCourseData() {
             if (response.status == 200) {
                 $('#mainDivCourse').removeClass('d-none');
                 $('#loaderDivCourse').addClass('d-none');
-                
-              
+
+
                 $('#CourseDataTable').DataTable().destroy();
                 $('#course_table').empty();
 
@@ -196,7 +196,7 @@ function getCourseData() {
 
                     ).appendTo('#course_table');
                 });
-                 
+
 
                   //Course  Table Delete icon click
 
@@ -205,7 +205,7 @@ function getCourseData() {
                     $('#CourseDeleteId').html(id);
                     $('#deleteCourseModal').modal('show');
                 });
-                 
+
                  //Course  Table Edit icon click
 
 
@@ -221,8 +221,8 @@ function getCourseData() {
                 $('#CourseDataTable').dataTable({"order":false});
                 $('.dataTables_length').addClass('bs-select');
 
-                
-              
+
+
 
             } else {
 
@@ -308,17 +308,17 @@ function CourseAdd(CourseName,CourseDes,CourseFee,CourseEnroll,CourseClass,Cours
 
                 }else{
                     $('#addCourseModal').modal('hide');
-                    toastr.error('Data Inserted Failed !'); 
+                    toastr.error('Data Inserted Failed !');
                     getCourseData();
                 }
             }else{
                 $('#addCourseModal').modal('hide');
-                toastr.error('Something Went Wrong !'); 
+                toastr.error('Something Went Wrong !');
             }
 
         }).catch(function(error){
              $('#addCourseModal').modal('hide');
-             toastr.error('Something Went Wrong !'); 
+             toastr.error('Something Went Wrong !');
         });
 
     }
@@ -342,7 +342,7 @@ $('#CourseDeleteConfirmBtn').click(function(){
 
 function CourseDelete(deleteID) {
    $('#CourseDeleteConfirmBtn').html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'></span></div>");  //animation(response pawar aage)
-    
+
     axios.post('/coursesDelete', {
             id: deleteID
         })
@@ -383,7 +383,7 @@ function CourseUpdateDetails(editID){
 
           $('#courseUpdateForm').removeClass('d-none');
           $('#courseEditLoader').addClass('d-none');
-        
+
         var jsonData =response.data;
 
           $('#CourseNameUpdateId').val(jsonData[0].course_name );
@@ -479,8 +479,8 @@ function CourseUpdate(CourseId,CourseName,CourseDes,CourseFee,CourseEnroll,Cours
             toastr.error('Something Went Wrong!');
          }
 
-        
-         
+
+
      }).catch(function(error){
         $('#UpdateCourseModal').modal('hide');
         toastr.error('Something Went Wrong!');
@@ -488,7 +488,7 @@ function CourseUpdate(CourseId,CourseName,CourseDes,CourseFee,CourseEnroll,Cours
 
 
     }
-   
+
 }
 
 

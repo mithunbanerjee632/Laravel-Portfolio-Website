@@ -9,6 +9,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,6 @@ Route::get('/login',[LoginController::class,'LoginIndex']);
 Route::post('/onlogin',[LoginController::class,'onLogin']);
 Route::get('/onlogout',[LoginController::class,'onLogout']);
 
+//Admin Photo Gallery Management
+Route::get('/photo',[PhotoController::class,'PhotoIndex']);
+Route::post('/photoupload',[PhotoController::class,'PhotoUpload']);

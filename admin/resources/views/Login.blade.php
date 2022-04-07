@@ -19,7 +19,7 @@
                   <div class="form-group">
                       <button name="submit" type="submit" class="btn btn-block btn-danger">Submit</button>
                   </div>
-                  
+
                </form>
             </div>
 
@@ -44,11 +44,11 @@
       let formData = $(this).serializeArray(); //serialize array call korle inputer data serial e chole asbe
       let userName = formData[0]['value'];
       let password = formData[1]['value'];
-      
+
       let url = "/onlogin";
 
       axios.post(url,{
-        user:userName, 
+        user:userName,
         pass:password
 
       })
