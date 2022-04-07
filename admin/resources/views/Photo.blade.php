@@ -3,8 +3,6 @@
 @section('title','Photo Gallery')
 @section('content')
 
-
-
      <div id="mainPhotoDiv" class="container">
          <div class="row">
              <div class="col-md-12 p-5">
@@ -13,6 +11,16 @@
              </div>
          </div>
      </div>
+
+   <div class="container-fluid">
+         <div class="row  PhotoRow">
+
+
+
+         </div>
+     </div>
+
+
 
 
     <div class="modal fade" id="PhotoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,16 +61,43 @@
         });
 
         $('#photoSave').on('click',function (){
+            $('#photoSave').html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'></span></div>");
+
             var photoFile = $('#imgInput').prop('files')[0];
             var formData = new FormData();
             formData.append('photo',photoFile);
 
             axios.post("/photoupload",formData).then(function(response){
-                alert(response.data);
+                if(response.status == 200 && response.data == 1){
+                    $('#photoSave').html('Save');
+                    $('#PhotoModal').modal('hide');
+                    toastr.success('Photo Upload Successfully!');
+                }else{
+                    $('#photoSave').html('Save');
+                    $('#PhotoModal').modal('hide');
+                    toastr.error('Photo Upload Failed!');
+                }
             }).catch(function (error) {
-                alert(error);
+                $('#photoSave').html('Save');
+                $('#PhotoModal').modal('hide');
+                toastr.error('Photo Upload Failed!');
             });
         });
+
+        PhotoLoad();
+
+        function PhotoLoad(){
+            axios.get('/photojson').then(function(response){
+                $.each(response.data, function(i, item) {
+                    $("<div class='col-md-3 p-1'>").html(
+                       "<img class='imageOnRow' src="+item['location']+" >"
+
+                    ).appendTo('.PhotoRow');
+                });
+            }).catch(function(error){
+
+            });
+        }
 
 
 

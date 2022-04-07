@@ -31,7 +31,6 @@
             </div>
         </aside>
 
-    <!-- <div class="page-wrapper">
+     <div class="page-wrapper">
 
-    </div> -->
-</div>
+
